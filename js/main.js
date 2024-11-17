@@ -215,6 +215,24 @@ function displayCars(cars) {
     return;
   }
 
+  cars.forEach(car => {
+    const carCard = document.createElement("div");
+    carCard.className = "car-card";
+
+    // Dynamically generate the inner HTML for each car card
+    carCard.innerHTML = `
+      <img src="image/${car.image}" alt="${car.make} ${car.model}" class="car-image" onerror="this.onerror=null; this.src='image/default.jpg';">
+      <h3>${car.year} ${car.make} ${car.model}</h3>
+      <p><strong>Price:</strong> $${car.price.toLocaleString()}</p>
+      <p><strong>Mileage:</strong> ${car.mileage.toLocaleString()} miles</p>
+      <p><strong>Color:</strong> ${car.color}</p>
+      <p><strong>Gas Mileage:</strong> ${car.gasMileage}</p>
+    `;
+
+    carContainer.appendChild(carCard); // Add the car card to the container
+  });
+}
+
   // Generate car cards
   cars.forEach((car) => {
     const carCard = document.createElement("div");
