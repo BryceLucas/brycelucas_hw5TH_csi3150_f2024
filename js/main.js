@@ -206,6 +206,7 @@ function populateFilterOptions() {
 
 // Function to display car cards based on the provided array of cars
 function displayCars(cars) {
+  console.log(cars); // Log the cars being passed to the function
   const carContainer = document.getElementById("car-container");
   carContainer.innerHTML = ""; // Clear existing content
 
@@ -215,13 +216,15 @@ function displayCars(cars) {
     return;
   }
 
-  cars.forEach(car => {
+  cars.forEach((car) => {
     const carCard = document.createElement("div");
     carCard.className = "car-card";
 
     // Dynamically generate the inner HTML for each car card
     carCard.innerHTML = `
-      <img src="image/${car.image}" alt="${car.make} ${car.model}" class="car-image" onerror="this.onerror=null; this.src='image/default.jpg';">
+      <img src="image/${car.image}" alt="${car.make} ${
+      car.model
+    }" class="car-image" onerror="this.onerror=null; this.src='image/default.jpg';">
       <h3>${car.year} ${car.make} ${car.model}</h3>
       <p><strong>Price:</strong> $${car.price.toLocaleString()}</p>
       <p><strong>Mileage:</strong> ${car.mileage.toLocaleString()} miles</p>
@@ -251,7 +254,7 @@ function displayCars(cars) {
 
     carContainer.appendChild(carCard);
   });
-}
+
 
 // Function to filter cars based on user input
 function filterCars() {
