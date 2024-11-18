@@ -57,7 +57,7 @@ const usedCars = [
     price: 15000,
     color: "Gray",
     gasMileage: "29 mpg city, 40 mpg highway",
-    image: "Volkswagenpassat.jpg",
+    image: "volkswagenpassat.jpg",
   },
   {
     year: 2020,
@@ -77,7 +77,7 @@ const usedCars = [
     price: 14000,
     color: "Green",
     gasMileage: "22 mpg city, 30 mpg highway",
-    image: "Subaruoutback.jpg",
+    image: "subaruoutback.jpg",
   },
   {
     year: 2017,
@@ -117,7 +117,7 @@ const usedCars = [
     price: 32000,
     color: "Red",
     gasMileage: "19 mpg city, 27 mpg highway",
-    image: "Cadillacxt5.jpg",
+    image: "cadillacxt5.jpg",
   },
   {
     year: 2018,
