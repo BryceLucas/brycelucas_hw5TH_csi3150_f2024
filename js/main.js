@@ -204,6 +204,38 @@ function populateFilterOptions() {
   });
 }
 
+// Function to safely get numeric input values with default fallback
+function getInputValue(id, defaultValue) {
+  const value = parseInt(document.getElementById(id).value);
+  return isNaN(value) ? defaultValue : value;
+}
+
+// Function to populate the make and color filter options dynamically
+function populateFilterOptions() {
+  const makeSelect = document.getElementById("make");
+  const colorSelect = document.getElementById("color");
+
+  // Extract unique makes and colors from the usedCars array
+  const makes = [...new Set(usedCars.map((car) => car.make))].sort();
+  const colors = [...new Set(usedCars.map((car) => car.color))].sort();
+
+  // Populate makes
+  makes.forEach((make) => {
+    const option = document.createElement("option");
+    option.value = make;
+    option.textContent = make;
+    makeSelect.appendChild(option);
+  });
+
+  // Populate colors
+  colors.forEach((color) => {
+    const option = document.createElement("option");
+    option.value = color;
+    option.textContent = color;
+    colorSelect.appendChild(option);
+  });
+}
+
 // Function to display car cards based on the provided array of cars
 function displayCars(cars) {
   console.log(cars); // Log the cars being passed to the function
